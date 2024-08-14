@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FullBuff Hosting MOTD</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://fastdl.cdn.fullbuff.gg/motd-files/fullbuffbanner.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .link {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+            z-index: 1;
+        }
+        .link a {
+            color: white;
+            text-decoration: none;
+        }
+        .link a span {
+            color: #79ff64;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="logo">
+        <img src="https://fastdl.cdn.fullbuff.gg/motd-files/fullbuff.png" alt="FullBuff Hosting Logo" width="200">
+    </div>
+    <div class="message">
+        Thank you for using FullBuff Hosting!
+    </div>
+    <div class="message">
+        Get your own server here today
+    </div>
+    <div class="message">
+        https://hosting.fullbuff.gg/
+    </div>
+</body>
+</html>
