@@ -11,8 +11,8 @@ sv_downloadurl "https://fastdl.fullbuff.gg/tf2"
 sv_allowdownload 1
 
 // API keys, add your keys below
-logstf_apikey ""
-sm_demostf_apikey ""
+logstf_apikey 
+sm_demostf_apikey 
 
 
 // Auto-kick timeout (minutes)
