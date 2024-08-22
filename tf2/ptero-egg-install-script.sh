@@ -131,7 +131,7 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 # Check if the server.cfg file already exists
 if [ ! -f /home/container/tf/cfg/server.cfg ]; then
     # Download the server.cfg file from the given URL
-    curl -O https://mirror.fullbuff.gg/tf2/cfg/server.cfg -o /home/container/tf/cfg/server.cfg
+    curl -O https://mirror.fullbuff.gg/tf2/cfg/server.cfg -o /mnt/server/tf/cfg/server.cfg
     echo "server.cfg downloaded successfully."
 else
     echo "The file /home/container/tf/cfg/server.cfg already exists. Skipping download."
