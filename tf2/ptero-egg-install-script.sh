@@ -128,10 +128,23 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/restorescore.smx https://mi
 echo "Pulling FixSTVSlot plugin files."
 curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirror.fullbuff.gg/tf2/addons/fixstvslot/fixstvslot.smx
 
+
+# Extra Plugins
+
+# Download and install SoapDM
+echo "Pulling curl-extension for sourcemod files."
+curl -sSL -o soap.zip https://lnk.fullbuff.gg/soapdm-latest
+unzip soap.zip -d soap
+cp -r soap/* /mnt/server/tf/
+
+rm -rf /mnt/server/tmp/*
+
+
+
 # Check if the server.cfg file already exists
 if [ ! -f /home/container/tf/cfg/server.cfg ]; then
-    # Download the server.cfg file from the given URL
-    curl -O https://mirror.fullbuff.gg/tf2/cfg/server.cfg -o /mnt/server/tf/cfg/server.cfg
+    # Download the default server.cfg file
+    curl -sSL -o /mnt/server/tf/cfg/server.cfg https://mirror.fullbuff.gg/tf2/cfg/server.cfg
     echo "server.cfg downloaded successfully."
 else
     echo "The file /home/container/tf/cfg/server.cfg already exists. Skipping download."

@@ -7,7 +7,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://fastdl.cdn.fullbuff.gg/motd-files/fullbuffbanner.png') no-repeat center center fixed;
+            background: url('https://mirror.fullbuff.gg/motd-files/fullbuffbanner.png') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
             color: white;
@@ -57,7 +57,7 @@
 <body>
     <div class="overlay"></div>
     <div class="logo">
-        <img src="https://fastdl.cdn.fullbuff.gg/motd-files/fullbuff.png" alt="FullBuff Hosting Logo" width="200">
+        <img src="https://mirror.fullbuff.gg/motd-files/fullbuff.png" alt="FullBuff Hosting Logo" width="200">
     </div>
     <div class="message">
         Thank you for using FullBuff Hosting!
