@@ -135,9 +135,16 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 echo "Pulling curl-extension for sourcemod files."
 curl -sSL -o soap.zip https://lnk.fullbuff.gg/soapdm-latest
 unzip soap.zip -d soap
-cp -r soap/* /mnt/server/tf/
+cp -rf soap/* /mnt/server/tf/
 
 rm -rf /mnt/server/tmp/*
+
+
+
+# Download and copy MOTD files
+echo "Pulling MOTD files."
+curl -sSL https://mirror.fullbuff.gg/tf2/cfg/motd_text_default.txt > /mnt/server/tf/cfg/motd_text_default.txt
+curl -sSL https://mirror.fullbuff.gg/tf2/cfg/motd_default.txt > /mnt/server/tf/cfg/motd_default.txt
 
 
 
