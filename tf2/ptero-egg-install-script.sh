@@ -147,7 +147,6 @@ curl -sSL https://mirror.fullbuff.gg/tf2/cfg/motd_text_default.txt > /mnt/server
 curl -sSL https://mirror.fullbuff.gg/tf2/cfg/motd_default.txt > /mnt/server/tf/cfg/motd_default.txt
 
 
-
 # Check if the server.cfg file already exists
 if [ ! -f /home/container/tf/cfg/server.cfg ]; then
     # Download the default server.cfg file
@@ -156,5 +155,17 @@ if [ ! -f /home/container/tf/cfg/server.cfg ]; then
 else
     echo "The file /home/container/tf/cfg/server.cfg already exists. Skipping download."
 fi
+
+# Remove default maps and download current RGL map pool
+echo "Pulling RGL map pool."
+rm -rf /mnt/server/tf/maps/*
+cd /mnt/server/tf/maps
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-pool/
+
+# Download 2Fort as a backup default map
+echo "Pulling 2fort as a backup default map."
+cd /mnt/server/tf/maps
+wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
+
 
 echo -e "Install Complete \nInstall Complete \nInstall Complete \n \n \n Please Start the server to begin playing!"
