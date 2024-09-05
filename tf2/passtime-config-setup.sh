@@ -88,11 +88,19 @@ rm -rf /mnt/server/tmp/*
 
 # Pulling all necessary plugins from the RGL server-resources-updater individually to avoid passtime specific errors 
 
+# Download and extract RGL resources updater
+echo "Pulling RGL updater files."
+curl -sSL -o rgl_resources_updater.zip https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip
+unzip -o rgl_resources_updater.zip -d /mnt/server/tf
+
+
 # Download and extract Passtime configs
 echo "Pulling Passtime files."
 curl -sSL -o p4sstime-configs-main.zip https://github.com/SpeakersVolumeUp/p4sstime-configs/archive/refs/heads/main.zip
 unzip -o p4sstime-configs-main.zip -d /mnt/server/tmp/
 cp -r /mnt/server/tmp/p4sstime-configs-main/cfg/* /mnt/server/tf/cfg/
+
+:'
 
 # Download Passtime plugin
 echo "Pulling Passtime plugin files."
@@ -124,7 +132,7 @@ curl -sSL -o server-resources-updater.zip https://lnk.fullbuff.gg/rgl-server-res
 unzip server-resources-updater.zip -d server-resources-updater
 cp server-resources-updater/addons/sourcemod/plugins/rglupdater.smx /mnt/server/tf/addons/sourcemod/plugins/rglupdater.smx
 
-
+'
 
 rm -rf /mnt/server/tmp/*
 
