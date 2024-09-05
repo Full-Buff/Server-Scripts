@@ -94,6 +94,11 @@ curl -sSL -o rgl_resources_updater.zip https://github.com/RGLgg/server-resources
 unzip -o rgl_resources_updater.zip -d /mnt/server/tf
 
 
+# Disable RGLQoL plugin for pugs
+echo "Moving RGLQoL to disabled"
+mv /mnt/server/tf/addons/sourcemod/plugins/rglqol.smx /mnt/server/tf/addons/sourcemod/plugins/disabled
+
+
 # Download and extract Passtime configs
 echo "Pulling Passtime files."
 curl -sSL -o p4sstime-configs-main.zip https://github.com/SpeakersVolumeUp/p4sstime-configs/archive/refs/heads/main.zip
@@ -133,6 +138,7 @@ unzip server-resources-updater.zip -d server-resources-updater
 cp server-resources-updater/addons/sourcemod/plugins/rglupdater.smx /mnt/server/tf/addons/sourcemod/plugins/rglupdater.smx
 
 '
+
 
 rm -rf /mnt/server/tmp/*
 
