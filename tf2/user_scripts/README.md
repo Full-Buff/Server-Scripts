@@ -1,1 +1,1 @@
-# This Files are placed in the /mnt/pterodactyl/scripts/tf folder on the game server nodes.
+# These files are placed in the /mnt/pterodactyl/scripts/tf folder on the game server nodes.
