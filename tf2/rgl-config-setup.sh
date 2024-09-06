@@ -160,7 +160,7 @@ fi
 echo "Pulling RGL map pool."
 rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-pool/
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-6s-pool/
 
 # Download 2Fort as a backup default map
 echo "Pulling 2fort as a backup default map."
