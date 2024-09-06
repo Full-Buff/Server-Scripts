@@ -85,60 +85,10 @@ cp -r curlext/* /mnt/server/tf/addons/sourcemod
 
 rm -rf /mnt/server/tmp/*
 
-
-# Pulling all necessary plugins from the RGL server-resources-updater individually to avoid passtime specific errors 
-
 # Download and extract RGL resources updater
 echo "Pulling RGL updater files."
 curl -sSL -o rgl_resources_updater.zip https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip
 unzip -o rgl_resources_updater.zip -d /mnt/server/tf
-
-
-# Disable RGLQoL plugin for pugs
-echo "Moving RGLQoL to disabled"
-mv /mnt/server/tf/addons/sourcemod/plugins/rglqol.smx /mnt/server/tf/addons/sourcemod/plugins/disabled
-
-
-# Download and extract Passtime configs
-echo "Pulling Passtime files."
-curl -sSL -o p4sstime-configs-main.zip https://github.com/SpeakersVolumeUp/p4sstime-configs/archive/refs/heads/main.zip
-unzip -o p4sstime-configs-main.zip -d /mnt/server/tmp/
-cp -r /mnt/server/tmp/p4sstime-configs-main/cfg/* /mnt/server/tf/cfg/
-
-:'
-
-# Download Passtime plugin
-echo "Pulling Passtime plugin files."
-curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/p4sstime.smx https://lnk.fullbuff.gg/passtime-plugin-latest
-
-# Download Updater plugin files
-wget -r -np -nH --cut-dirs=3 -P /mnt/server/tf/addons/sourcemod/ https://mirror.fullbuff.gg/tf2/addons/updater/
-
-# Download and install tf2-comp-fixes plugin
-echo "Pulling tf2-comp-fixes-latest files."
-curl -sSL -o tf2-comp-fixes.zip https://lnk.fullbuff.gg/tf2-comp-fixes-latest
-unzip tf2-comp-fixes.zip -d tf2-comp-fixes
-cp -r tf2-comp-fixes/* /mnt/server/tf/addons
-
-# Download SrcTV+ files
-echo "Pulling SrcTV+ files."
-curl -sSL -o /mnt/server/tf/addons/srctvplus.so https://lnk.fullbuff.gg/srctvplus-linux-latest
-curl -sSL -o /mnt/server/tf/addons/srctvplus.vdf https://lnk.fullbuff.gg/passtime-plugin-latest
-
-# Download and install updated-pause-plugin  plugin
-echo "Pulling updated-pause-plugin files."
-curl -sSL -o updated-pause-plugin.zip https://lnk.fullbuff.gg/updated-pause-latest
-unzip updated-pause-plugin.zip -d updated-pause-plugin
-cp -r updated-pause-plugin/* /mnt/server/tf
-
-# Download and install RGL server-resources-updater plugin
-echo "Pulling RGL server-resources-updater files."
-curl -sSL -o server-resources-updater.zip https://lnk.fullbuff.gg/rgl-server-resources-updater-latest
-unzip server-resources-updater.zip -d server-resources-updater
-cp server-resources-updater/addons/sourcemod/plugins/rglupdater.smx /mnt/server/tf/addons/sourcemod/plugins/rglupdater.smx
-
-'
-
 
 rm -rf /mnt/server/tmp/*
 
