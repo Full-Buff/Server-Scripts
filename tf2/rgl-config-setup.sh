@@ -170,10 +170,5 @@ echo "Pulling 2fort as a backup default map."
 cd /mnt/server/tf/maps
 wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
 
-# Download Chillypunch MGE as a default map
-echo "Pulling Chillypunch MGE as a default map."
-cd /mnt/server/tf/maps
-wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/mge_chillypunch_final4_fix2.bsp
-
 
 echo -e "Install Complete \nInstall Complete \nInstall Complete \n \n \n Please Start the server to begin playing!"
