@@ -149,7 +149,7 @@ wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
 
 
 # Extra Plugins
-
+cd /mnt/server/tmp
 # Download and install SoapDM
 echo "Pulling SoapDM files."
 curl -sSL -o soap.zip https://lnk.fullbuff.gg/soapdm-latest
