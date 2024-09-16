@@ -132,10 +132,17 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 # Extra Plugins
 
 # Download and install SoapDM
-echo "Pulling curl-extension for sourcemod files."
+echo "Pulling SoapDM files."
 curl -sSL -o soap.zip https://lnk.fullbuff.gg/soapdm-latest
 unzip soap.zip -d soap
 cp -rf soap/* /mnt/server/tf/
+
+# Download and install MGEMod
+echo "Pulling MGEMod files."
+curl -sSL -o mge.zip https://lnk.fullbuff.gg/mgemod-latest
+unzip mge.zip -d mge
+cp -rf mge/* /mnt/server/tf/
+
 
 rm -rf /mnt/server/tmp/*
 

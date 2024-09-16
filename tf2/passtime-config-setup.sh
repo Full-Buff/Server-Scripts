@@ -131,7 +131,11 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 
 # Extra Plugins
 
-
+# Download and install MGEMod
+echo "Pulling MGEMod files."
+curl -sSL -o mge.zip https://lnk.fullbuff.gg/mgemod-latest
+unzip mge.zip -d mge
+cp -rf mge/* /mnt/server/tf/
 
 rm -rf /mnt/server/tmp/*
 
