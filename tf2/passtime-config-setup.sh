@@ -129,23 +129,6 @@ echo "Pulling FixSTVSlot plugin files."
 curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirror.fullbuff.gg/tf2/addons/fixstvslot/fixstvslot.smx
 
 
-
-# Remove default maps and download current RGL map pool
-echo "Pulling RGL map pool."
-rm -rf /mnt/server/tf/maps/*
-cd /mnt/server/tf/maps
-# 6s Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-6s-pool/
-# HL Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-hl-pool/
-
-# Download 2Fort as a backup default map
-echo "Pulling 2fort as a backup default map."
-cd /mnt/server/tf/maps
-wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
-
-
-
 # Extra Plugins
 
 # Download and install MGEMod
@@ -172,6 +155,17 @@ if [ ! -f /home/container/tf/cfg/server.cfg ]; then
 else
     echo "The file /home/container/tf/cfg/server.cfg already exists. Skipping download."
 fi
+
+# Remove default maps and download current Passtime map pool
+echo "Pulling Passtime map pool."
+rm -rf /mnt/server/tf/maps/*
+cd /mnt/server/tf/maps
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-4v4_passtime-pool/
+
+# Download 2Fort as a backup default map
+echo "Pulling 2fort as a backup default map."
+cd /mnt/server/tf/maps
+wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
 
 
 echo -e "Install Complete \nInstall Complete \nInstall Complete \n \n \n Please Start the server to begin playing!"
