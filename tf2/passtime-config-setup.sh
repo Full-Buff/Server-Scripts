@@ -137,12 +137,12 @@ rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
 wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-4v4_passtime-pool/
 
-
-
-
-
-
-
+# Download passtime configs from https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
+echo "Pulling Passtime configs."
+cd /mnt/server/tmp
+curl -sSL -o passtime-configs.zip https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
+unzip passtime-configs.zip -d passtime-configs
+cp -rf passtime-configs/passtime-global-ruleset-main/*.cfg /mnt/server/tf/cfg
 
 
 
