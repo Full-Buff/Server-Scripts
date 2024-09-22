@@ -135,7 +135,7 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 echo "Pulling Passtime map pool."
 rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-4v4_passtime-pool/
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-4v4_passtime-pool/
 
 # Download passtime configs from https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
 echo "Pulling Passtime configs."
@@ -169,7 +169,7 @@ rm -rf /mnt/server/tmp/*
 # Download 2Fort as a backup default map
 echo "Pulling 2fort as a backup default map."
 cd /mnt/server/tf/maps
-wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
+wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/maps/ctf_2fort.bsp
 
 # Download and copy MOTD files
 echo "Pulling MOTD files."

@@ -136,9 +136,9 @@ echo "Pulling RGL map pool."
 rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
 # 6s Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-6s-pool/
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-6s-pool/
 # HL Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf2-rgl-hl-pool/
+wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-hl-pool/
 
 
 
@@ -175,7 +175,7 @@ rm -rf /mnt/server/tmp/*
 # Download 2Fort as a backup default map
 echo "Pulling 2fort as a backup default map."
 cd /mnt/server/tf/maps
-wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/ctf_2fort.bsp
+wget -np -nH --cut-dirs=1 -A "*" https://fastdl.fullbuff.gg/tf/maps/ctf_2fort.bsp
 
 # Download and copy MOTD files
 echo "Pulling MOTD files."
