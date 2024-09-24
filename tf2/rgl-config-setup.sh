@@ -136,9 +136,9 @@ echo "Pulling RGL map pool."
 rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
 # 6s Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-6s-pool/
+wget -r -np -nH --cut-dirs=2 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-6s-pool/
 # HL Pool
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-hl-pool/
+wget -r -np -nH --cut-dirs=2 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-rgl-hl-pool/
 
 
 

@@ -135,7 +135,7 @@ curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/fixstvslot.smx https://mirr
 echo "Pulling Passtime map pool."
 rm -rf /mnt/server/tf/maps/*
 cd /mnt/server/tf/maps
-wget -r -np -nH --cut-dirs=1 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-4v4_passtime-pool/
+wget -r -np -nH --cut-dirs=2 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-4v4_passtime-pool/
 
 # Download passtime configs from https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
 echo "Pulling Passtime configs."
