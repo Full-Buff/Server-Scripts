@@ -160,6 +160,12 @@ curl -sSL -o mge.zip https://lnk.fullbuff.gg/mgemod-latest
 unzip mge.zip -d mge
 cp -rf mge/* /mnt/server/tf/
 
+# Download sdr-plugin and SteamPawn https://github.com/Full-Buff/sdr-plugin/releases/download/1.0.0/showsdr.zip
+echo "Pulling sdr-plugin and SteamPawn files."
+curl -sSL -o showsdr.zip https://github.com/Full-Buff/sdr-plugin/releases/download/1.0.0/showsdr.zip
+unzip showsdr.zip -d showsdr
+cp -rf showsdr/* /mnt/server/tf/addons/sourcemod/
+
 # Download Map Downloader 
 echo "Pulling Map Downloader files."
 curl -sSL -o /mnt/server/tf/addons/sourcemod/plugins/mapdownloader.smx https://github.com/spiretf/mapdownloader/raw/master/plugin/mapdownloader.smx
