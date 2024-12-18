@@ -140,9 +140,9 @@ wget -r -np -nH --cut-dirs=2 -A "*.bsp" https://fastdl.fullbuff.gg/tf/tf2-4v4_pa
 # Download passtime configs from https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
 echo "Pulling Passtime configs."
 cd /mnt/server/tmp
-curl -sSL -o passtime-configs.zip https://github.com/flareshmoney/passtime-global-ruleset/archive/refs/heads/main.zip
+curl -sSL -o passtime-configs.zip https://github.com/p4sstime/p4sstime-server-resources/archive/refs/heads/main.zip
 unzip passtime-configs.zip -d passtime-configs
-cp -rf passtime-configs/passtime-global-ruleset-main/*.cfg /mnt/server/tf/cfg
+cp -rf passtime-configs/passtime-global-ruleset-main/cfg/*.cfg /mnt/server/tf/cfg
 
 
 
