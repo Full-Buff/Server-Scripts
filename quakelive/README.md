@@ -9,6 +9,6 @@ Ideally, to avoid a lot of this, and integrate it better with ptero, I would ins
 Current example startup command: ./start_server.sh  +set net_port {{SERVER_PORT}} +set sv_hostname.....
 
 Redis files that matter in our context if we need to reinstall:
-    1. ./dump.rdb
-    2. ./redis_6379.pid
-    3. ./redis.log
+1. ./dump.rdb
+2. ./redis_6379.pid
+3. ./redis.log
