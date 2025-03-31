@@ -47,20 +47,65 @@ cp -v linux64/steamclient.so ../.steam/sdk64/steamclient.so
 
 # MinQLX Installation
 apt-get update
-apt-get -y install python3 python3-dev
+apt-get -y install python3 python3-dev python3-pip python3-redis redis-server git build-essential
 
-apt-get -y install redis-server git build-essential
+export PYTHONPATH=/usr/local/lib/python3.11/dist-packages:$PYTHONPATH
 
+cd /mnt/server/
 git clone https://github.com/MinoMino/minqlx.git
 cd minqlx
 make
 
+# Move files to the correct location
+cp -a /mnt/server/minqlx/bin/. /mnt/server/
+rm -rf /mnt/server/minqlx
+
+# Install minqlx plugins
+cd /mnt/server/
 git clone https://github.com/MinoMino/minqlx-plugins.git
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python3 get-pip.py
+python3 get-pip.py
 rm get-pip.py
 export PIP_BREAK_SYSTEM_PACKAGES=1  # Workaround for Debian 12+ users
-sudo python3 -m pip install -r minqlx-plugins/requirements.txt
+pip install --target=/mnt/server/ -r /mnt/server/minqlx-plugins/requirements.txt
+#python3 -m pip install --upgrade pip
+pip install --target=/mnt/server/ redis
+
+
+# Install Redis locally in the server directory
+cd /mnt/server/
+mkdir -p redis_local
+cd redis_local
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+make PREFIX=/mnt/server/redis install
+
+# Create a Redis configuration file
+cat > /mnt/server/redis.conf << 'EOL'
+daemonize yes
+port 6379
+bind 127.0.0.1
+dir ./
+pidfile ./redis_6379.pid
+logfile ./redis.log
+EOL
+
+# Create a proper startup script
+cat > /mnt/server/start_server.sh << 'EOL'
+#!/bin/bash
+# Start Redis server
+echo "Starting Redis server..."
+# Use the full path to the redis-server binary
+./redis_local/redis-stable/src/redis-server /mnt/server/redis.conf
+# Wait a bit for Redis to start
+sleep 2
+echo "Redis started. Starting Quake Live server..."
+# Start Quake Live with minqlx
+exec ./run_server_x64_minqlx.sh "$@"
+EOL
+
 
 ## install end
 echo "-----------------------------------------"
