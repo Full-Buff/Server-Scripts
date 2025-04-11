@@ -98,7 +98,7 @@ cat > /mnt/server/start_server.sh << 'EOL'
 # Start Redis server
 echo "Starting Redis server..."
 # Use the full path to the redis-server binary
-./redis_local/redis-stable/src/redis-server /mnt/server/redis.conf
+./redis_local/redis-stable/src/redis-server ./redis.conf
 # Wait a bit for Redis to start
 sleep 2
 echo "Redis started. Starting Quake Live server..."
